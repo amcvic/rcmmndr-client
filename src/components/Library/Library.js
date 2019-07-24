@@ -1,11 +1,12 @@
 import React, {useEffect} from 'react';
 import {Button, Row, Col} from 'reactstrap';
 import SearchIndex from '../SearchIndex/SearchIndex';
+import APIURL from '../../helpers/environment';
 
 const Library = (props) => {
   
   const removeArtistFromProfile = (artist) => {
-    fetch('http://localhost:3000/profile/delete', {
+    fetch(`${APIURL}/profile/delete`, {
       method: 'DELETE',
       body: JSON.stringify({artist: artist}),
       headers: {

@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {Form, FormFeedback, FormGroup, Label, Input, Button} from 'reactstrap';
+import APIURL from '../../helpers/environment';
 
 const Signup = (props) => {
   const [username, setUsername] = useState('');
@@ -22,7 +23,7 @@ const Signup = (props) => {
       setInvalidPassword(true);
     }
     if (validPassword && validEmail) {
-      fetch('http://localhost:3000/user/signup', {
+      fetch(`${APIURL}/user/signup`, {
         method: 'POST',
         body: JSON.stringify({user: {username: username, password: password}}),
         headers: new Headers({
