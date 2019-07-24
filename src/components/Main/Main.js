@@ -56,7 +56,7 @@ const Main = (props) => {
         'Content-Type': 'applicaton/json'
       }
     }).then(res => res.json())
-    .then(json => json.topalbums && json.topalbums.album[0] ? setImageData(prevState => ({...prevState, [artist]:json.topalbums.album[0].image[2]['#text']})) : setImageData(prevState => ({...prevState, [artist]:'https://lastfm-img2.akamaized.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png'})))
+    .then(json => json.topalbums && json.topalbums.album[0] && (json.topalbums.album[0].image[2]['#text'] !== '') ? setImageData(prevState => ({...prevState, [artist]:json.topalbums.album[0].image[2]['#text']})) : setImageData(prevState => ({...prevState, [artist]:'https://lastfm-img2.akamaized.net/i/u/174s/2a96cbd8b46e442fc41c2b86b821562f.png'})))
     .catch(err => console.log(err));
   }
 

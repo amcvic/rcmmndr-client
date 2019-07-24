@@ -11,6 +11,7 @@ function App() {
 
   const [sessionToken, setSessionToken] = useState('');
   const [signup, setSignup] = useState(false);
+  const [userid, setUserid] = useState(0);
 
   useEffect(() => {
     if (localStorage.getItem('token')) {
@@ -28,12 +29,17 @@ function App() {
     setSessionToken('');
   }
 
+  // const updateUser = (userid) => {
+  //   localStorage.setItem('userid', userid);
+  //   setUserid(userid);
+  // }
+
   const protectedViews = () => {
     return (sessionToken === localStorage.getItem('token') ? <Router> <Main token={sessionToken} logout={clearToken}/> </Router> : <Auth signup={signup} setSignup={setSignup} token={sessionToken} updateToken={updateToken}/>);
   }
 
   return (
-    <div classname='bg'>
+    <div className='bg'>
       {protectedViews()}
     </div>
   );

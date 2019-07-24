@@ -26,7 +26,7 @@ const SearchIndex = (props) => {
         if (!props.imageData[e.name] && props.imageData[e.name] !== '') {
           console.log('fetching image for ' + e.name);
           props.fetchImage(e.name);
-        }
+        } 
       })
     })
     // .then(json => console.log(json))
@@ -40,6 +40,7 @@ const SearchIndex = (props) => {
   }
 
   const artistMapper = () => {
+    //FILTER OUT ARTISTS THAT ARE ALREADY IN LIBRARY
     return artistData.map((a, i) => {
       // if (!props.imageData[a.name] && props.imageData[a.name] !== '') {
       //   console.log('no image found for ' + a.name);

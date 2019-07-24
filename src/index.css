@@ -1,13 +1,17 @@
 body {
-  background-image: linear-gradient(to top right, #79a6d6, #FFFFFF);
-  background-repeat: no-repeat;
-  background-size: cover;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #app, #app>div {
+  height: 100%;
+  background-image: linear-gradient(to top right, #79a6d6, #FFFFFF);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 code {
@@ -30,7 +34,8 @@ code {
 }
 
 .center {
-  margin: auto;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .auth {
