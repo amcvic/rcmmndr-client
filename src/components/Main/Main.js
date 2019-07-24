@@ -15,6 +15,7 @@ import {
 import SearchIndex from '../SearchIndex/SearchIndex';
 import Library from '../Library/Library';
 import Recommendations from '../Recommendations/Recommendations';
+import APIURL from '../../helpers/environment';
 
 const Main = (props) => {
 
@@ -25,7 +26,7 @@ const Main = (props) => {
   let artistBase = '&artist=';
 
   const fetchLibrary = () => {
-    fetch('http://localhost:3000/profile/get', {
+    fetch(`${APIURL}/profile/get`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -37,7 +38,7 @@ const Main = (props) => {
   }
 
   const addArtistToProfile = (artist, url, imgUrl) => {
-    fetch('http://localhost:3000/profile/add', {
+    fetch(`${APIURL}/profile/add`, {
       method: 'POST',
       body: JSON.stringify({artist: artist, url: url, imgUrl: imgUrl}),
       headers: {

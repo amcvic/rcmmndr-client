@@ -31,7 +31,7 @@ const Signup = (props) => {
       }).then(
         (res) => res.json()
       ).then((data) => {
-        console.log(data);
+        // props.setUser
         props.updateToken(data.sessionToken);
         // return fetch('http://localhost:3000/profile/create', {
         //   method: 'POST',
